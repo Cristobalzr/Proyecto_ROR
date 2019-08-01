@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  natural: MyString
+  fundation: MyString
+  veterinary: MyString
+
+two:
+  natural: MyString
+  fundation: MyString
+  veterinary: MyString
