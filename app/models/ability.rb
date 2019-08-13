@@ -9,8 +9,6 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
-      elsif user.visit?
-        can :read, :all
       elsif user.natural?
         can :read, :all
       elsif user.foundation?
