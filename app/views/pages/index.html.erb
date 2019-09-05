@@ -1,0 +1,15 @@
+
+
+<div class="row pt-5">
+	<div class="col-sm">
+		<h1>Mascotas</h1>
+		<%= link_to 'Ingresa mascota', new_pet_path %>
+		<% @pets.each do |pet| %>
+		<div class="card">
+			<h2><%= pet.name %></h2>
+			<h3><%= pet.description  %></h3>
+			<h3><%= pet.location %></h3>
+		</div>
+		<% end %>
+
+</div>
