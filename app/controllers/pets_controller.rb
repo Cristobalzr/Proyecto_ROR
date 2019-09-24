@@ -9,7 +9,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to root_path @pet, notice: 'Pet was successfully created.' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }
@@ -29,6 +29,6 @@ class PetsController < ApplicationController
 
   private
   def pet_params
-    params.require(:pet).permit(:name, :location, :type, :photo, :adopted, :injured, :description)
+    params.require(:pet).permit(:name, :latitude, :longitude, :type, :photo, :adopted, :injured, :description)
   end
 end

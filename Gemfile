@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'devise'
 
+gem "nokogiri", ">= 1.10.4"
+
 gem'cancancan'
 gem 'rails-erd', require: false, group: :development
 # Use CoffeeScript for .coffee assets and views

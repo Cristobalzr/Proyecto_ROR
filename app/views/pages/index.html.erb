@@ -1,15 +1,19 @@
 
 
-<div class="row pt-5">
-	<div class="col-sm">
-		<h1>Mascotas</h1>
-		<%= link_to 'Ingresa mascota', new_pet_path %>
+<div class="pt-5">
+	<h1 class="display-1">Mascotas</h1>
+	<% if user_signed_in? %>
+		<%= link_to 'Ingresa mascota', new_pet_path, class: "btn btn-primary" %>
+	<% end %>
+	<div class="row card-deck pt-5">
 		<% @pets.each do |pet| %>
 		<div class="card">
+			<img id="display" src="https://picsum.photos/200" alt="">
 			<h2><%= pet.name %></h2>
 			<h3><%= pet.description  %></h3>
-			<h3><%= pet.location %></h3>
+			<!-- interpolacion -->
+			<h3><% "#{pet.latitude}, #{pet.longitude}"%></h3>
 		</div>
 		<% end %>
-
+	</div>
 </div>
