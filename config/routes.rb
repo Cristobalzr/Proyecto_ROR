@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "pets/locations"
+
   resources :pets, except: :destroy
 
   devise_for :users , controllers: {

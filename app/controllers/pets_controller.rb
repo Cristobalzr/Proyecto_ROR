@@ -27,6 +27,10 @@ class PetsController < ApplicationController
   def update
   end
 
+  def locations
+    render json: Pet.select(:id, :latitude, :longitude).to_json
+  end
+
   private
   def pet_params
     params.require(:pet).permit(:name, :latitude, :longitude, :type, :photo, :adopted, :injured, :description)

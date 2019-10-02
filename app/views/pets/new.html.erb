@@ -1,20 +1,25 @@
-<div class="row">
+<div class="row pt-5">
   <div class="col">
     <%= form_with model: @pet, local: true do |f| %>
         <div class="">
-          <%= f.label :name, "Nombre" %>
-          <%= f.text_field :name %>
+          <p><%= f.label :name, "Nombre" %></p>
+          <p><%= f.text_field :name %></p>
+        </div>
+
+        <div class="">
+          <p><%= f.label :injured, "¿La mascota esta herida? " %> <%= f.check_box :injured %></p>
+          <p></p>
         </div>
         <div class="">
-          <%= f.label :descrption, "Descripcion" %>
-          <%= f.text_area :description %>
+          <p><%= f.label :descrption, "Descripción" %></p>
+          <p><%= f.text_area :description %></p>
         </div>
         <div class="">
-          <%= f.text_field :latitude %>
-          <%= f.text_field :longitude %>
+          <p><%= f.hidden_field :latitude %></p>
+          <p><%= f.hidden_field :longitude %></p>
         </div>
         <div class="">
-          <%= f.submit "Enviar" %>
+          <%= f.submit "Enviar", class: "btn btn-primary" %>
         </div>
     <% end %>
   </div>
