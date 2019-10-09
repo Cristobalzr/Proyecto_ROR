@@ -11,8 +11,8 @@
 	<div class="row card-deck pt-5">
 		<% @pets.each do |pet| %>
 		<div class="card">
-			<img id="display" src="https://picsum.photos/200" alt="">
 			<h2><%= pet.name %></h2>
+			<p><%= image_tag pet.photo.url %></p>
 			<h3><%= pet.description  %></h3>
 			<!-- interpolacion -->
 			<h3><% "#{pet.latitude}, #{pet.longitude}"%></h3>

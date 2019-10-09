@@ -15,7 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-gem 'devise'
+gem "devise", ">= 4.7.1"
 
 gem 'geocoder'
 
@@ -24,6 +24,8 @@ gem "nokogiri", ">= 1.10.4"
 gem'cancancan'
 
 gem "rubycritic", require: false
+
+gem 'carrierwave'
 
 gem 'rails-erd', require: false, group: :development
 # Use CoffeeScript for .coffee assets and views

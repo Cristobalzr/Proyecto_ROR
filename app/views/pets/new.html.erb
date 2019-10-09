@@ -5,7 +5,10 @@
           <p><%= f.label :name, "Nombre" %></p>
           <p><%= f.text_field :name %></p>
         </div>
-
+        <div class="field">
+          <p><%= f.label :photo, "Imagen" %></p>
+          <p><%= f.file_field :photo, id: :photo_image %></p>
+          </div>
         <div class="">
           <p><%= f.label :injured, "¿La mascota esta herida? " %> <%= f.check_box :injured %></p>
           <p></p>
