@@ -20,3 +20,12 @@
 		<% end %>
 	</div>
 </div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+	    var mymap = null;
+			mymap = L.map('mapid').locate({setView: true, maxZoom: 16});
+	    createMap(mymap);
+	    showPetsLocatios(mymap);
+	});
+</script>
