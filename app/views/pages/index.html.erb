@@ -16,6 +16,9 @@
 			<h3><%= pet.description  %></h3>
 			<!-- interpolacion -->
 			<h3><% "#{pet.latitude}, #{pet.longitude}"%></h3>
+			
+				<p><%= link_to 'Eliminar', pet_path(pet), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm btn-danger' %></p>
+
 		</div>
 		<% end %>
 	</div>

@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-
+  before_action :set_pet, only: [:destroy]
   def new
     @pet = Pet.new
   end
@@ -31,8 +31,20 @@ class PetsController < ApplicationController
     render json: Pet.select(:id, :latitude, :longitude).to_json
   end
 
+  def destroy
+    @pet.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Eliminaste la mascota' }
+      format.json { head :no_content }
+    end
+  end
+
   private
   def pet_params
     params.require(:pet).permit(:name, :latitude, :longitude, :type, :photo, :adopted, :injured, :description)
+  end
+
+  def set_pet
+    @pet = Pet.find(params[:id])
   end
 end
