@@ -6,7 +6,6 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
-
     respond_to do |format|
       if @pet.save
         format.html { redirect_to root_path @pet, notice: 'Pet was successfully created.' }
@@ -28,7 +27,7 @@ class PetsController < ApplicationController
   end
 
   def locations
-    render json: Pet.select(:id, :latitude, :longitude).to_json
+    render json: Pet.select(:id, :name, :latitude, :longitude, :photo).to_json
   end
 
   def destroy

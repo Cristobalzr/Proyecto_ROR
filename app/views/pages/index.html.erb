@@ -10,15 +10,13 @@
 	<% end %>
 	<div class="row card-deck pt-5">
 		<% @pets.each do |pet| %>
-		<div class="card">
+		<div class="card col-5">
 			<h2><%= pet.name %></h2>
-			<p><%= image_tag pet.photo.url %></p>
+			<p><%= image_tag pet.photo.url, class: :pet_photo %></p>
 			<h3><%= pet.description  %></h3>
 			<!-- interpolacion -->
 			<h3><% "#{pet.latitude}, #{pet.longitude}"%></h3>
-			
 				<p><%= link_to 'Eliminar', pet_path(pet), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm btn-danger' %></p>
-
 		</div>
 		<% end %>
 	</div>

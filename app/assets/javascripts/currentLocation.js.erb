@@ -14,7 +14,7 @@ function showPetsLocatios(map){
       console.log(data);
       data.forEach(function(location){
         if(location.latitude && location.longitude){
-          L.marker([location.latitude, location.longitude]).addTo(map);
+          L.marker([location.latitude, location.longitude]).addTo(map).bindPopup('<h2 class="container">' +location.name.toString() + '</h2>'+ '<img src="'+location.photo.url +'" style="width:auto; max-width:150px;max-height:150px;">');
         }
       });
     });

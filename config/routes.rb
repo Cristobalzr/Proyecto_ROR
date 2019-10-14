@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   get "pets/locations"
-
   resources :pets
-
   devise_for :users , controllers: {
     registrations: 'users/registrations'
   }
