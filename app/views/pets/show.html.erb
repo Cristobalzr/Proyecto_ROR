@@ -1,6 +1,25 @@
-<div class="pt-5 container">
-
-  <img src="<%= @pet.photo %>" alt="">
-  <h1><%= @pet.name %></h1>
-  <p><%= @pet.description  %></p>
+<div class="row">
+  <div class="col-6 pt-5 container">
+    <div class="">
+      <p><%= image_tag @pet.photo.url %></p>
+      <h1><%= @pet.name %></h1>
+      <p><%= @pet.description  %></p>
+      <p><%= link_to 'Eliminar', pet_path(@pet), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm' %></p>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="">
+  		<div class="container" id="mapid">
+  		</div>
+  	</div>
+  </div>
 </div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+	    var mymap = null;
+			mymap = L.map('mapid').locate({setView: true, maxZoom: 16});
+	    createMap(mymap);
+	    showPetsLocatios(mymap);
+	});
+</script>

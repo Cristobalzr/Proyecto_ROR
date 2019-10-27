@@ -21,33 +21,87 @@
        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
        crossorigin=""></script>
+       <!-- font -->
+       <link href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="<%= root_path %>">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <% if user_signed_in? %>
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hola! <%= current_user.email.partition('@').first %> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-            <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ingreso <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-            <li><%= link_to 'Inicia sesión', new_user_session_path %></li>
-            <li><%= link_to 'Regístrate', new_user_registration_path %></li>
-            <% end %>
-          </li>
-        </ul>
+    <div class="navcolor shadow-sm">
+      <nav class="row navbar navbar-expand-lg navbar-dark">
+          <div class="col-1 container">
+            <a class="navbar-brand" href="<%= root_path %>"> <img class="pata" src="assets/top-odkasy-sketched-symbol.svg"> DogMe </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-8">
+            <a class="navbar-brand" href="<%= pets_path %>"> Mascotas </a>
+          </div>
+          <div class="col-2">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <% if user_signed_in? %>
+                  <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hola! <%= current_user.email.partition('@').first %> <span class="caret"></span></a>
+                  <ul class="dropdown-menu pl-4">
+                  <li><%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: :blanco %></li>
+                  <% else %>
+                  <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ingreso <span class="caret"></span></a>
+                  <ul class="dropdown-menu pl-4">
+                  <li><%= link_to 'Inicia sesión', new_user_session_path, class: :blanco %></li>
+                  <li><%= link_to 'Regístrate', new_user_registration_path, class: :blanco %></li>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+      <div class="new-pet">
+      	<div class="container pt-2 pb-2">
+      		<% if user_signed_in? %>
+      			<%= link_to 'Ingresa una nueva mascota', new_pet_path, class: "new-pet"%>
+      			<% else %>
+      			<h1 class="new-pet pt-1">Inicia sesión o registrate para ingresar una nueva mascota.</h1>
+      		<% end %>
+      	</div>
       </div>
-    </nav>
-    <div class="container">
+    </div>
+    <div class="">
       <%= yield %>
     </div>
   </body>
+  <div class="">
+
+  </div>
+  <footer class="footer-bs shadow-sm">
+      <div class="row">
+        <div class="col-md-5 footer-brand animated fadeInLeft pl-5 pr-5 pb-5">
+            <a class="navbar-brand" href="<%= root_path %>"> <img class="pata" src="assets/top-odkasy-sketched-symbol.svg"></a>
+              <p class="pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+        </div>
+        <div class="col-md-4 footer-nav animated fadeInUp">
+          <h4>Menu —</h4>
+          <div class="col-md-6">
+                <ul class="pages">
+                    <li><a class="navbar-brand" href="<%= pets_path %>"> Mascotas </a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list">
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-md-3 footer-social animated fadeInDown">
+            <h4>Síguenos</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
 </html>

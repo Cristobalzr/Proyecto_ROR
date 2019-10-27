@@ -1,36 +1,13 @@
-<div class="pt-5">
-	<div class="container-fluid" id="mapid">
+
+<div class="p-5" id="map-holder">
+	<div class="container fill shadow-sm pt-5 pb-5">
+		<div id="mapid">
+		</div>
 	</div>
 </div>
 
-<div class="pt-5 container">
-	<h1 class="display-1">Mascotas</h1>
-	<% if user_signed_in? %>
-		<%= link_to 'Ingresa mascota', new_pet_path, class: "btn btn-primary" %>
-	<% end %>
-</div>
 
-<div class="container">
-	<div class="row pt-5">
-			<% @pets.each do |pet| %>
-				<div class="col-3 pt-5">
-					<div class="card">
-						<a href="<%= pet_path(pet)%>">
-							<p><%= image_tag pet.photo.url, class: :pet_photo %></p>
-							<div class="card-body">
-								<h2><%= pet.name %></h2>
-								
-								<!-- interpolacion -->
-								<h3><% "#{pet.latitude}, #{pet.longitude}"%></h3>
-								<p><%= link_to 'Eliminar', pet_path(pet), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm btn-danger' %></p>
-							</div>
-						</a>
 
-					</div>
-				</div>
-			<% end %>
-	</div>
-</div>
 
 <script>
 	document.addEventListener('DOMContentLoaded', function(){

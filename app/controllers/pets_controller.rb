@@ -1,5 +1,9 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:destroy]
+
+  def index
+    @pets = Pet.all
+  end
   def new
     @pet = Pet.new
   end
