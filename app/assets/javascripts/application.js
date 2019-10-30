@@ -12,6 +12,4 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require leaflet
-//= require tangram
 //= require_tree .
