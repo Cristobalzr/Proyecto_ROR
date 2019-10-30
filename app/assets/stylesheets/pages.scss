@@ -1,6 +1,5 @@
 // Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// They will automatically be included in application.css// You can use Sass (SCSS) here: http://sass-lang.com/
 
 html, body {
     height: 100%;
@@ -8,24 +7,75 @@ html, body {
     font-family: 'Raleway', sans-serif;
     background-color: #efeef1;
     color: #FFFFFF;
+    background-image: url('bone.svg');
+    background-repeat: round;
+    background-color: #ffffff;
+    // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%23c0bfcc' stroke-width='0' %3E%3Crect fill='%23eaecff' x='-60' y='-60' width='110' height='240'/%3E%3C/g%3E%3C/svg%3E");
+
+}
+
+.top {
+  background-color: #011627;
+}
+
+.headerspike {
+  background-image: url('pastel.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 33rem;
+
+}
+
+.titulopage {
+  color: #073B4C;
+  font-weight: bold;
+  background-color: #ffffff;
+  margin-top: 2rem;
+}
+
+.pageinfo {
+  background-color: #011627;
+
+}
+
+.contacto {
+  height: 20rem;
+}
+
+.iconos {
+  font-size: 6em;
+  color: #073B4C;
+}
+
+.separadoriconoc {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #ffffff;
+  height: 18rem;
+  width: 18rem;
+}
+
+.titulocontacto {
+  color: #011627;
+  font-weight: bold;
 }
 
 a {
-  color: #2EC4B6;
+  color: #052F5F;
   font-style: normal;
   text-decoration: none;
   font-weight: bold;
 }
 
 .nueva {
-  background-color: #2EC4B6;
+  background-color: #210d3a;
   border-radius: 25px;
 }
 
 
 .mascotas {
-  background-color: #efeef1;
-  color: #2EC4B6;
+  color: #052F5F;
   font-weight: bold;
 }
 
@@ -74,10 +124,7 @@ a {
     height: 100%;
     width: 100%;
     max-width: 100%;
-    background-color: #2EC4B6;
-    border-radius: 20px;
-    border-style: solid;
-    border-color: #0C2A38;
+
 }
 
 .leaflet-bar a { background-color: #fff; border-bottom: 1px solid #ccc; color: #444; display: block; height: 26px; width: 26px; line-height: 1.45 !important; text-align: center; text-decoration: none; font: bold 18px 'Lucida Console', Monaco, monospace; }
@@ -96,6 +143,7 @@ button {
 }
 
 .pet_photo {
+  height: 11rem;
   width: 100%;
   object-fit: cover;
   border-radius: 10% 10% 50% 150% / 25px;
@@ -104,6 +152,11 @@ button {
 .pet_photo_new {
   width: 100%;
   height: 100%;
+}
+
+.pet-show-new {
+  background-color: #ffffff;
+  color: #0C2A38;
 }
 
 .card {
@@ -117,7 +170,7 @@ button {
   font-size: 1.1em;
   color: #ffffff;
   font-weight: bold;
-  background-color: #0C2A38;
-  border-radius: 10% 10% 40% 40% / 20px;
+  background-color: #005393;
+
 
 }

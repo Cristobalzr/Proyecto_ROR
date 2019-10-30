@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get "pets/locations"
   resources :pets
+  get "pages/map"
   devise_for :users , controllers: {
     registrations: 'users/registrations'
   }

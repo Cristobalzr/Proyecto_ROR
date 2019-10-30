@@ -1,7 +1,17 @@
+<div class="new-pet">
+	<div class="container pt-2 pb-2">
+		<% if user_signed_in? %>
+			<%= link_to 'Ingresa una nueva mascota', new_pet_path, class: "new-pet"%>
+			<% else %>
+			<h1 class="new-pet pt-1"><a class="blanco"href="new_user_session_path"><u>Inicia sesión</u></a> o <a class="blanco" href="new_user_registration_path"><u>registrate</u></a> para ingresar una nueva mascota.</h1>
+		<% end %>
+	</div>
+</div>
+
 <div class="mascotas container">
 	<div class="pt-5 container">
     <div class="">
-      <h1 class="display-4">Mascotas buscando hogar</h1>
+      <h1 class="">Mascotas buscando hogar</h1>
     </div>
 
 	</div>
