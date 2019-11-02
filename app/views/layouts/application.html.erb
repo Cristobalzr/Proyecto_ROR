@@ -33,7 +33,7 @@
     <div class="navcolor shadow-sm">
       <nav class="row navbar navbar-expand-lg navbar-dark">
           <div class="col-1 container">
-            <a class="navbar-brand" href="<%= root_path %>"> <%= image_tag("top-odkasy-sketched-symbol.svg") %></a>
+            <a class="navbar-brand" href="<%= root_path %>"> <%= image_tag("top-odkasy-sketched-symbol.svg") %> DogMe </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,7 +46,7 @@
           <div class="col-2">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown pl-4">
                   <% if user_signed_in? %>
                   <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Hola! <%= current_user.email.partition('@').first %> <span class="caret"></span></a>
                   <ul class="dropdown-menu pl-4">
@@ -74,7 +74,7 @@
   <footer class="footer-bs shadow-sm">
       <div class="row">
         <div class="col-md-5 footer-brand animated fadeInLeft pl-5 pr-5 pb-5">
-            <a class="navbar-brand" href="<%= root_path %>"> <img class="pata" src="assets/top-odkasy-sketched-symbol.svg"></a>
+            <a class="navbar-brand" href="<%= root_path %>"> <%= image_tag("top-odkasy-sketched-symbol.svg") %> </a>
               <p class="pt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
         </div>
         <div class="col-md-4 footer-nav animated fadeInUp">

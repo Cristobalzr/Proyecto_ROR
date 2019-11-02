@@ -29,6 +29,8 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'omniauth-facebook'
+
 gem 'rails-erd', require: false, group: :development
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

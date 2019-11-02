@@ -69,8 +69,9 @@ a {
 }
 
 .nueva {
-  background-color: #210d3a;
-  border-radius: 25px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  color: #073B4C;
 }
 
 
@@ -81,8 +82,8 @@ a {
 
 .mapanuevo {
 
-  background-color: #2EC4B6;
-  border-radius: 25px;
+  background-color: #ffffff;
+  border-radius: 15px;
 
 }
 
@@ -95,8 +96,17 @@ a {
   height: 2.5rem;
 }
 
+.titulomascotashogar {
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.titulomascotashogar h1 {
+  font-weight: bold;
+}
+
 .btn {
-  background-color: #2EC4B6;
+  background-color: #F77F00;
   font-size: 2rem;
   color: #FFFFFF;
   height: 4rem;
@@ -124,6 +134,8 @@ a {
     height: 100%;
     width: 100%;
     max-width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 15px;
 
 }
 
@@ -171,6 +183,8 @@ button {
   color: #ffffff;
   font-weight: bold;
   background-color: #005393;
+}
 
-
+.azul {
+  color: #073B4C;
 }
