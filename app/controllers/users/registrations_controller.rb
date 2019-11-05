@@ -6,13 +6,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    @roles = ['natural', 'foundation', 'veterinary']
+    @roles = ['natural']
     super
   end
 
   # POST /resource
   def create
-    @roles = ['natural', 'foundation', 'veterinary']
+    @roles = ['natural']
     super
   end
 

@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-  enum role: [:admin, :visit, :natural, :foundation, :veterinary]
+  enum role: [:admin, :visit, :natural]
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# 5.times do |i|
+#   p = Pet.create(name: "Mascota #{i}", photo: "" %>', description: "Soy la mascota numero #{i}", latitude: "-3#{i}.4389084030824", longitude: "-7#{i}.6188297271729")
+# end

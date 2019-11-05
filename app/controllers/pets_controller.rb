@@ -12,7 +12,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to root_path @pet, notice: 'Pet was successfully created.' }
+        format.html { redirect_to pets_path @pet, notice: 'Pet was successfully created.' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new }
