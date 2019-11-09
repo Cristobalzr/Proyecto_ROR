@@ -1,6 +1,6 @@
 <div class="p-5">
   <div class="row pt-5 nuevomapaback">
-    <div class="col pt-5">
+    <div class="col from-group pt-5">
       <div class="nueva container-fluid shadow-sm p-5">
         <%= form_with model: @publication, local: true do |f| %>
             <div class="shadow-sm container">
@@ -12,12 +12,12 @@
               <p><%= f.file_field :photo, id: :photo_image %></p>
               </div>
             <div class="field container shadow-sm">
-              <p><%= f.label :descrption, "Descripción" %></p>
-              <p><%= f.text_area :description, class: "form-control", rows: 5 %></p>
+              <p><%= f.label :description, "Descripción" %></p>
+              <p><%= f.text_area :description, class: "form-control-lg", rows: 6 %></p>
             </div>
             <div class="">
-              <p><%= f.text_field :latitude %></p>
-              <p><%= f.text_field :longitude %></p>
+              <p><%= f.hidden_field :latitude %></p>
+              <p><%= f.hidden_field :longitude %></p>
             </div>
             <div class="container">
               <%= f.submit "Enviar", class: "btn shadow-sm" %>

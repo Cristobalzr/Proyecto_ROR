@@ -5,6 +5,7 @@
       <div class="container">
         <h1><%= @publication.name %></h1>
         <p><%= @publication.description  %></p>
+        <p><%= @publication.user.email %></p>
         <% if user_signed_in? %>
           <p class="container"><%= link_to 'Eliminar', publication_path(@publication), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm' %></p>
         <% end %>
