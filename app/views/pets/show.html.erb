@@ -2,9 +2,11 @@
   <div class="col-4 container ">
     <div class="pet-show-new shadow-sm">
       <p><%= image_tag @pet.photo.url, class: 'showphoto' %></p>
-      <h1><%= @pet.name %></h1>
-      <p><%= @pet.description  %></p>
-      <p class="container"><%= link_to 'Eliminar', pet_path(@pet), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm' %></p>
+      <div class="container">
+        <h1><%= @pet.name %></h1>
+        <p><%= @pet.description  %></p>
+        <p class="container"><%= link_to 'Eliminar', pet_path(@pet), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm' %></p>
+      </div>
     </div>
   </div>
   <div class="col-8">
