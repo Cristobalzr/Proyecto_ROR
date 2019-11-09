@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  has_many :matches
-  has_many :pets, through: :matches
-  has_many :actions, through: :matches
+  has_many :publications
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

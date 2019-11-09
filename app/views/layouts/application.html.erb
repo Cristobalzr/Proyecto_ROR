@@ -4,6 +4,7 @@
     <title>Proyecto</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicon0.png', type: 'image/png' %>
     <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -42,7 +43,7 @@
           </div>
           <div class="col-8">
             <a class="navbar-brand" href="<%= root_path %>"> Inicio </a>
-            <a class="navbar-brand" href="<%= pets_path %>"> Mascotas </a>
+            <a class="navbar-brand" href="<%= publications_path %>"> Mascotas </a>
             <a class="navbar-brand" href="<%= pages_map_path %>"> Mapa </a>
           </div>
           <div class="col-2">
@@ -83,7 +84,7 @@
           <h4>Menu —</h4>
           <div class="col-md-6">
                 <ul class="pages">
-                    <li><a class="navbar-brand" href="<%= pets_path %>"> Mascotas </a></li>
+                    <li><a class="navbar-brand" href="<%= publications_path %>"> Mascotas </a></li>
                 </ul>
             </div>
             <div class="col-md-6">

@@ -10,31 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_224508) do
+ActiveRecord::Schema.define(version: 2019_11_09_151857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actions", force: :cascade do |t|
+  create_table "publications", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "matches", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "pet_id"
-    t.bigint "action_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["action_id"], name: "index_matches_on_action_id"
-    t.index ["pet_id"], name: "index_matches_on_pet_id"
-    t.index ["user_id"], name: "index_matches_on_user_id"
-  end
-
-  create_table "pets", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
     t.string "photo"
     t.boolean "adopted"
     t.boolean "injured"
@@ -43,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_11_02_224508) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_publications_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,7 +44,5 @@ ActiveRecord::Schema.define(version: 2019_11_02_224508) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "matches", "actions"
-  add_foreign_key "matches", "pets"
-  add_foreign_key "matches", "users"
+  add_foreign_key "publications", "users"
 end

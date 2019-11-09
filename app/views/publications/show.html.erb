@@ -1,0 +1,31 @@
+<div class="row p-5">
+  <div class="col-4 container ">
+    <div class="pet-show-new shadow-sm">
+      <p><%= image_tag @publication.photo.url, class: 'showphoto' %></p>
+      <div class="container">
+        <h1><%= @publication.name %></h1>
+        <p><%= @publication.description  %></p>
+        <% if user_signed_in? %>
+          <p class="container"><%= link_to 'Eliminar', publication_path(@publication), method: :delete, data: { confirm: 'Estás seguro que deseas eliminar esta mascota?' }, class: 'btn btn-sm' %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-8">
+    <div class="">
+  		<div class="container" id="mapid">
+  		</div>
+  	</div>
+  </div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+	    var mymap = null;
+			mymap = L.map('mapid').setView([<%= @publication.latitude %>, <%= @publication.longitude %>], 16);
+	    createMap(mymap);
+      L.circle([<%= @publication.latitude %>, <%= @publication.longitude %>], {
+        radius: 100
+      }).addTo(mymap);
+	});
+</script>

@@ -2,7 +2,7 @@
   <div class="row pt-5 nuevomapaback">
     <div class="col pt-5">
       <div class="nueva container-fluid shadow-sm p-5">
-        <%= form_with model: @pet, local: true do |f| %>
+        <%= form_with model: @publication, local: true do |f| %>
             <div class="shadow-sm container">
               <p><%= f.label :name, "Nombre" %></p>
               <p><%= f.text_field :name, class: "form-control" %></p>
@@ -16,8 +16,8 @@
               <p><%= f.text_area :description, class: "form-control", rows: 5 %></p>
             </div>
             <div class="">
-              <p><%= f.hidden_field :latitude %></p>
-              <p><%= f.hidden_field :longitude %></p>
+              <p><%= f.text_field :latitude %></p>
+              <p><%= f.text_field :longitude %></p>
             </div>
             <div class="container">
               <%= f.submit "Enviar", class: "btn shadow-sm" %>

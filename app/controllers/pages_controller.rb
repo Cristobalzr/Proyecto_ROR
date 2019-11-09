@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def index
-    @pets = Pet.all
+    @publications = Publication.all
   end
   def map
-    @pets = Pet.all
+    @publications = Publication.all
   end
 
 end

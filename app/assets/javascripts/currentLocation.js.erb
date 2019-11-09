@@ -9,14 +9,14 @@ function createMap(map){
 }
 
 function showPetsLocations(map){
-  $.ajax("/pets/locations")
+  $.ajax("/publications/locations")
     .done(function(data){
       console.log(data);
       data.forEach(function(location){
         if(location.latitude && location.longitude){
           L.circle([location.latitude, location.longitude],{
             radius: 100
-          }).addTo(map).bindPopup('<h2 class="container">' +location.name.toString() + '</h2>'+ '<a href="/pets/'+location.id+'"><img class="container nueva" src="'+location.photo.url +'" style="width:auto; max-width:150px;max-height:150px;"> <p class="container"><button type="button" class="btn">Información</button></p></a>');
+          }).addTo(map).bindPopup('<h2 class="container">' +location.name.toString() + '</h2>'+ '<a href="/publications/'+location.id+'"><img class="container nueva" src="'+location.photo.url +'" style="width:auto; max-width:150px;max-height:150px;"> <p class="container"><button type="button" class="btn">Información</button></p></a>');
         }
       });
     });
@@ -31,8 +31,8 @@ function selectPetLocation(map){
     lon = e.latlng.lng;
 
     console.log("Estas en LAT: "+ lat+" y LONG: "+lon );
-    $("#pet_latitude").val(lat);
-    $("#pet_longitude").val(lon);
+    $("#publication_latitude").val(lat);
+    $("#publication_longitude").val(lon);
 
     if (marker != undefined) {
         map.removeLayer(marker);

@@ -1,7 +1,7 @@
 <div class="new-pet">
 	<div class="container pt-2 pb-2">
 		<% if user_signed_in? %>
-			<%= link_to 'Ingresa una nueva mascota', new_pet_path, class: "new-pet"%>
+			<%= link_to 'Ingresa una nueva mascota', new_publication_path, class: "new-pet"%>
 			<% else %>
 			<h1 class="new-pet pt-1"><%= link_to 'Inicia sesión', new_user_session_path, class: :blanco %> o <%= link_to 'Regístrate', new_user_registration_path, class: :blanco %> para ingresar una nueva mascota</h1>
 		<% end %>
@@ -16,10 +16,10 @@
 
 	</div>
 	<div class="row container-fluid pb-5 pt-3">
-			<% @pets.each do |pet| %>
+			<% @publications.each do |pet| %>
 				<div class="col-md-3 p-3">
 					<div class="card shadow-sm bg-white">
-						<a href="<%= pet_path(pet)%>">
+						<a href="<%= publication_path(pet)%>">
 							<p><%= image_tag pet.photo.url, class: :pet_photo %></p>
 							<div class="card-body">
 								<h2 class="card-title container"><%= pet.name %></h2>

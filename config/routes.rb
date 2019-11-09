@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get "pets/locations"
-  resources :pets
+  get "publications/locations"
+  resources :publications
   get "pages/map"
   devise_for :users , controllers: {
     registrations: 'users/registrations', :omniauth_callbacks =>

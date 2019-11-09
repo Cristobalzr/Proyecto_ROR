@@ -11,7 +11,7 @@ class Ability
         can :manage, :all
       elsif user.natural?
         can :read, :all
-        can :destroy, Pet, user_id: user.id
+        can :destroy, Publication, user_id: user.id
       elsif user.foundation?
         can :read, :all
       elsif user.veterinary?

@@ -8,5 +8,5 @@
 
 
 # 5.times do |i|
-#   p = Pet.create(name: "Mascota #{i}", photo: "" %>', description: "Soy la mascota numero #{i}", latitude: "-3#{i}.4389084030824", longitude: "-7#{i}.6188297271729")
+#   p = Pet.create(name: "Mascota #{i}", photo: "", description: "Soy la mascota numero #{i}", latitude: "-3#{i}.4389084030824", longitude: "-7#{i}.6188297271729")
 # end
