@@ -35,16 +35,26 @@
   <body>
     <div class="navcolor shadow-sm">
       <nav class="row navbar navbar-expand-lg navbar-dark">
-          <div class="col-1 container">
+          <div class="col-1">
             <a class="navbar-brand" href="<%= root_path %>"> <%= image_tag("top-odkasy-sketched-symbol.svg") %> DogMe </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
           </div>
-          <div class="col-8">
+          <div class="col-3">
             <a class="navbar-brand" href="<%= root_path %>"> Inicio </a>
-            <a class="navbar-brand" href="<%= publications_path %>"> Mascotas </a>
             <a class="navbar-brand" href="<%= pages_map_path %>"> Mapa </a>
+            <a class="navbar-brand" href="<%= publications_path %>"> Mascotas </a>
+          </div>
+
+          <div class="col-5">
+            <div class="">
+              <% if user_signed_in? %>
+          			<h2><%= link_to 'Ingresa una nueva mascota', new_publication_path, class:"blanco"%></h2>
+          			<% else %>
+          			<h2 class=""><%= link_to 'Ingresa una nueva mascota', new_user_session_path, class: :blanco %></h2>
+          		<% end %>
+            </div>
           </div>
           <div class="col-2">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
